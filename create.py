@@ -5,7 +5,7 @@ def create(name: str):
     code_dir = Path('Code') / name
     data_dir = Path('Data') / name
     script_file = code_dir / f"{name}.py"
-    base_code = Path('BaseCode.py')
+    base_code = Path('Code') / 'BaseCode.py'
     
     try:
         template = base_code.read_text()

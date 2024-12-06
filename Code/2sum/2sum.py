@@ -13,7 +13,7 @@ def twoSum(arg1: list[int], arg2: int) -> list[int]:
     for i in range(len(arg1)):
         twoSumDict[arg1[i]] = i
     for i in range(len(arg1)):
-        diff = arg2 - arg1[i]
+        diff = int(arg2) - arg1[i]
         if diff in twoSumDict and twoSumDict[diff] != i:
             return [i, twoSumDict[arg2 - arg1[i]]]
     return []
@@ -41,8 +41,7 @@ def main():
         # detect integeter
         if arg[0] == '[' and arg[-1] == ']':
             args.append([int(x) for x in arg[1:len(arg)-1].split(',')]) 
-        elif type(arg[0]) == int:
-            print("int")
+        elif arg[0].isdigit():
             args.append(int(arg))
         # detect string
         elif type(arg[0]) == str:
